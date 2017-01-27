@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Horizontal Scroll</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style>
+			body {
+				margin: 0;
+			}
+
+			.block{
+				width: 400px;
+				height: 200px;
+				background-color: #e2e2e2;
+				border-radius: 3px;
+				display: inline-block;
+				margin: 50px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="block">
+
+			</div>
+			<div class="block">
+
+			</div>
+			<div class="block">
+
+			</div>
+			<div class="block">
+
+			</div>
+		</div>
+		<script src="../dist/index.js"></script>
+		<script>
+
+			var blocks = document.getElementsByClassName('block');
+			var container = document.getElementsByClassName('container');
+			console.log(blocks);
+			var hs = new HorizontalScroll.default({
+				blocks : blocks,
+				container: container,
+				spring: 0.9
+			});
+		</script>
+	</body>
+</html>
