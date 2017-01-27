@@ -52,7 +52,7 @@ Friction of the skew effect.
 Strength of the skew effect.
 
 ### Example
-[https://corentinfardeau.github.io/horizontal-scroll/]
+https://corentinfardeau.github.io/horizontal-scroll/
 
 ### License
 MIT.
