@@ -51,5 +51,8 @@ Friction of the skew effect.
 #### strengthEffect `Number` `20`
 Strength of the skew effect.
 
+### Example
+`https://corentinfardeau.github.io/horizontal-scroll/`
+
 ### License
 MIT.
