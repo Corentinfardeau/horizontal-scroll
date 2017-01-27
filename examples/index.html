@@ -7,34 +7,83 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<style>
+
+			html, body{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
 			body {
 				margin: 0;
 			}
 
 			.block{
-				width: 400px;
-				height: 200px;
-				background-color: #e2e2e2;
-				border-radius: 3px;
-				display: inline-block;
 				margin: 50px;
+			}
+
+			.container{
+				margin-top: 200px;
+			}
+
+			h2{
+				font-size: 80px;
+				font-family: Helvetica;
 			}
 
 		</style>
 	</head>
 	<body>
 		<div class="container">
-			<div class="block">
 
+			<div class="block">
+				<h2>Coucou</h2>
 			</div>
 			<div class="block">
-
+				<h2>Hello</h2>
 			</div>
 			<div class="block">
-
+				<h2>Topito</h2>
 			</div>
 			<div class="block">
+				<h2>Lorem ipsum</h2>
+			</div>
 
+			<div class="block">
+				<h2>Liligo</h2>
+			</div>
+
+			<div class="block">
+				<h2>Scroll effect</h2>
+			</div>
+
+			<div class="block">
+				<h2>Block skew</h2>
+			</div>
+
+			<div class="block">
+				<h2>Coucou</h2>
+			</div>
+			<div class="block">
+				<h2>Hello</h2>
+			</div>
+			<div class="block">
+				<h2>Topito</h2>
+			</div>
+			<div class="block">
+				<h2>Lorem ipsum</h2>
+			</div>
+
+			<div class="block">
+				<h2>Liligo</h2>
+			</div>
+
+			<div class="block">
+				<h2>Scroll effect</h2>
+			</div>
+
+			<div class="block">
+				<h2>Block skew</h2>
 			</div>
 		</div>
 		<script src="../dist/index.js"></script>
@@ -42,12 +91,12 @@
 
 			var blocks = document.getElementsByClassName('block');
 			var container = document.getElementsByClassName('container');
-			console.log(blocks);
 			var hs = new HorizontalScroll.default({
 				blocks : blocks,
 				container: container,
-				spring: 0.9
+				springEffect: 0.3
 			});
+
 		</script>
 	</body>
 </html>
