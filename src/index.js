@@ -17,8 +17,8 @@ export default class HorizontalScroll extends EventEmitter {
 			blocks: opts.blocks,
 			isAnimated: opts.isAnimated || false,
 			spring: opts.spring  || 0.1,
-			springEffect: opts.springEffect || 0.1,
-			strengthEffect: opts.strengthEffect || 20
+			springEffect: opts.springEffect || 0.07,
+			strengthEffect: opts.strengthEffect || 10
 		}, opts);
 
 		this.vars = {

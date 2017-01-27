@@ -18,7 +18,14 @@
 				margin: 0;
 			}
 
+			h1 {
+				margin: 50px;
+				font-family: Helvetica;
+			}
+
 			.block{
+				width: 400px;
+				height: 200px;
 				margin: 50px;
 			}
 
@@ -34,57 +41,41 @@
 		</style>
 	</head>
 	<body>
+		<h1>Horizontal scroll</h1>
 		<div class="container">
 
-			<div class="block">
-				<h2>Coucou</h2>
-			</div>
-			<div class="block">
-				<h2>Hello</h2>
-			</div>
-			<div class="block">
-				<h2>Topito</h2>
-			</div>
-			<div class="block">
-				<h2>Lorem ipsum</h2>
+			<div class="block" style="background-image: url(assets/nasa1.jpg)">
+
 			</div>
 
-			<div class="block">
-				<h2>Liligo</h2>
+			<div class="block" style="background-image: url(assets/nasa2.jpg)">
+
 			</div>
 
-			<div class="block">
-				<h2>Scroll effect</h2>
+			<div class="block" style="background-image: url(assets/nasa3.jpg)">
+
 			</div>
 
-			<div class="block">
-				<h2>Block skew</h2>
+			<div class="block" style="background-image: url(assets/nasa4.jpg)">
+
 			</div>
 
-			<div class="block">
-				<h2>Coucou</h2>
-			</div>
-			<div class="block">
-				<h2>Hello</h2>
-			</div>
-			<div class="block">
-				<h2>Topito</h2>
-			</div>
-			<div class="block">
-				<h2>Lorem ipsum</h2>
+			<div class="block" style="background-image: url(assets/nasa5.jpg)">
+
 			</div>
 
-			<div class="block">
-				<h2>Liligo</h2>
+			<div class="block" style="background-image: url(assets/nasa6.jpg)">
+
 			</div>
 
-			<div class="block">
-				<h2>Scroll effect</h2>
+			<div class="block" style="background-image: url(assets/nasa7.jpg)">
+
 			</div>
 
-			<div class="block">
-				<h2>Block skew</h2>
+			<div class="block" style="background-image: url(assets/nasa8.jpg)">
+
 			</div>
+
 		</div>
 		<script src="../dist/index.js"></script>
 		<script>
@@ -94,7 +85,7 @@
 			var hs = new HorizontalScroll.default({
 				blocks : blocks,
 				container: container,
-				springEffect: 0.3
+				isAnimated: true
 			});
 
 		</script>
