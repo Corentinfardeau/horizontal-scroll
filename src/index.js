@@ -15,6 +15,7 @@ export default class HorizontalScroll extends EventEmitter {
 		this.options = Object.assign({
 			container: opts.container,
 			blocks: opts.blocks,
+			isAnimated: opts.isAnimated || false,
 			spring: opts.spring  || 0.1,
 			springEffect: opts.springEffect || 0.1,
 			strengthEffect: opts.strengthEffect || 20
@@ -139,7 +140,11 @@ export default class HorizontalScroll extends EventEmitter {
 		this.vars.speed += (this.vars.speedTarget - this.vars.speed) * this.vars.springEffect;
 
 		// TRANSFORM
-		this.wrapper.style[this.transform] = `translate3d(-${this.vars.scrollValue}px, 0 ,0) skewX(${this.vars.speed}deg)`;
+		if (this.options.isAnimated) {
+			this.wrapper.style[this.transform] = `translate3d(-${this.vars.scrollValue}px, 0 ,0) skewX(${this.vars.speed}deg)`;
+		} else {
+			this.wrapper.style[this.transform] = `translate3d(-${this.vars.scrollValue}px, 0 ,0)`;
+		}
 
 		this.vars.oldScrollValue = this.vars.scrollValue;
 		this.raf(this._update);
