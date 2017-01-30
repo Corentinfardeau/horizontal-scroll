@@ -1,4 +1,3 @@
-'use strict';
 import { EventEmitter } from 'events';
 import VirtualScroll from 'virtual-scroll';
 import raf from 'raf';
@@ -98,11 +97,11 @@ export default class HorizontalScroll extends EventEmitter {
 			'position': 'relative',
 		});
 
-		for (let block of this.options.blocks) {
+		Array.prototype.forEach.call(this.options.blocks, block => {
 			block.style.display = 'inline-block';
 			this.options.container[0].replaceChild(this.wrapper, block);
 			this.wrapper.appendChild(block);
-		}
+		});
 
 		this.options.container[0].appendChild(this.wrapper);
 
@@ -136,7 +135,7 @@ export default class HorizontalScroll extends EventEmitter {
 
 		//SPEED
 		let delta = this.vars.oldScrollValue - this.vars.scrollValue;
-		this.vars.speedTarget = Math.round(Math.max(-this.options.strengthEffect, Math.min(delta, this.options.strengthEffect)));
+		this.vars.speedTarget = Math.max(-this.options.strengthEffect, Math.min(delta, this.options.strengthEffect));
 		this.vars.speed += (this.vars.speedTarget - this.vars.speed) * this.vars.springEffect;
 
 		// TRANSFORM
