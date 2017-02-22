@@ -3,7 +3,21 @@
   "version": "1.0.0",
   "author": "Fardeau Corentin <fardeaucorentin@gmail.com>",
   "description": "Horizontal scroll with inertia",
-  "main": "build/index.js",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corentinfardeau/horizontal-scroll"
+  },
+  "bugs": {
+    "url": "https://github.com/corentinfardeau/horizontal-scroll/issues"
+  },
+  "keywords": [
+    "scroll",
+    "horizontal-scroll",
+    "inertia",
+    "horizontal"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "watch": "npm run clean && parallelshell 'npm run watch:lint' 'npm run watch:js'",
