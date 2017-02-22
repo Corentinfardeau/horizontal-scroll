@@ -1,6 +1,6 @@
 {
   "name": "horizontal-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Fardeau Corentin <fardeaucorentin@gmail.com>",
   "description": "Horizontal scroll with inertia",
   "main": "dist/index.js",
