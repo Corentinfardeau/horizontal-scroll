@@ -45,11 +45,11 @@ If true, the list should have a skew relative to the scroll speed.
 #### spring `Number` `0.1`
 Friction of the scroll.
 
-#### springEffect `Number` `0.1`
-Friction of the skew effect.
-
-#### strengthEffect `Number` `20`
+#### skewReducer `Number` `20`
 Strength of the skew effect.
+
+#### skewLimit `Number` `20`
+Limit value of the skew effect.
 
 ### Example
 https://corentinfardeau.github.io/horizontal-scroll/

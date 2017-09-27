@@ -135,7 +135,6 @@ export default class HorizontalScroll extends EventEmitter {
 		// DELTA
 		let delta = this.vars.scrollTarget - this.vars.scrollValue;
 		let skew = delta / this.options.skewReducer;
-
 		this.vars.speed = this._clamp(-skew, -this.options.skewLimit, this.options.skewLimit);
 
 		// TRANSFORM
@@ -149,6 +148,14 @@ export default class HorizontalScroll extends EventEmitter {
 		this.raf(this._update);
 	}
 
+	/**
+	 * CLAMP
+	 *
+	 */
+	_clamp(num, min, max) {
+		return Math.min(Math.max(num, min), max);
+	}
+
 	// PUBLIC
 
 	/**
@@ -159,10 +166,6 @@ export default class HorizontalScroll extends EventEmitter {
 	onResize() {
 		this.vars.scrollLeft = 0;
 		this.vars.scrollRight = this.wrapper.getBoundingClientRect().width - window.innerWidth;
-	}
-
-	_clamp(num, min, max) {
-		return Math.min(Math.max(num, min), max);
 	}
 
 	destroy() {
