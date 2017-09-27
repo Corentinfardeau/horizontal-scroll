@@ -16,8 +16,8 @@ export default class HorizontalScroll extends EventEmitter {
 			blocks: opts.blocks,
 			isAnimated: opts.isAnimated || false,
 			spring: opts.spring  || 0.1,
-			springEffect: opts.springEffect || 0.07,
-			strengthEffect: opts.strengthEffect || 10
+			skewReducer: opts.skewReducer || 20,
+			skewLimit: opts.skewLimit || 30,
 		}, opts);
 
 		this.vars = {
@@ -27,7 +27,6 @@ export default class HorizontalScroll extends EventEmitter {
 			scrollLeft: 0,
 			scrollRight: 0,
 			spring: this.options.spring,
-			springEffect: this.options.springEffect,
 			direction: 0,
 			speed: 0,
 			speedTarget: 0,
@@ -133,10 +132,11 @@ export default class HorizontalScroll extends EventEmitter {
 		// SCROLL VALUE
 		this.vars.scrollValue += (this.vars.scrollTarget - this.vars.scrollValue) * this.vars.spring;
 
-		//SPEED
-		let delta = this.vars.oldScrollValue - this.vars.scrollValue;
-		this.vars.speedTarget = Math.max(-this.options.strengthEffect, Math.min(delta, this.options.strengthEffect));
-		this.vars.speed += (this.vars.speedTarget - this.vars.speed) * this.vars.springEffect;
+		// DELTA
+		let delta = this.vars.scrollTarget - this.vars.scrollValue;
+		let skew = delta / this.options.skewReducer;
+
+		this.vars.speed = this._clamp(-skew, -this.options.skewLimit, this.options.skewLimit);
 
 		// TRANSFORM
 		if (this.options.isAnimated) {
@@ -159,6 +159,10 @@ export default class HorizontalScroll extends EventEmitter {
 	onResize() {
 		this.vars.scrollLeft = 0;
 		this.vars.scrollRight = this.wrapper.getBoundingClientRect().width - window.innerWidth;
+	}
+
+	_clamp(num, min, max) {
+		return Math.min(Math.max(num, min), max);
 	}
 
 	destroy() {
